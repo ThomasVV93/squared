@@ -1,0 +1,48 @@
+const gameState = {
+    rects: {},
+
+    }
+
+function preload() {
+    this.load.image('background', 'assets/background.jpg')
+    this.load.image('rectGrey', 'assets/rectGrey.jpg')
+    this.load.image('rectRed', 'assets/rectRed.jpg')
+    
+}
+function create() {
+    gameState.background = this.add.image(0,0,'background').setOrigin(0,0);
+
+gameState.rects.rectG = this.add.sprite(2.4,17.5, 'rectGrey');
+
+play();
+
+
+
+}
+console.log(gameState.rects)
+function play() {
+    gameState.rects.rectG.setInteractive();
+    gameState.rects.rectG.on('pointerup', function() {
+
+        gameState.rects.rectG.destroy();
+        gameState.rects.rectR = this.add.sprite(2.4,17.5, 'rectGrey');
+        
+    })
+
+}
+
+
+
+
+const config = {
+    type: Phaser.AUTO,
+    width: 660,
+    height: 625, 
+    backgroundColor: 'ffffff',
+    scene: 
+    {
+        preload,
+        create
+    }
+}
+const game = new Phaser.Game(config);

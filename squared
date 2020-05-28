@@ -8,13 +8,7 @@ function preload() {
     this.load.image('rectGrey', 'assets/rectGrey.jpg')
     this.load.image('rectRed', 'assets/rectRed.jpg')
     
-}
-function create() {
-    gameState.background = this.add.image(0,0,'background').setOrigin(0,0);
 
-gameState.rects.rectG = this.add.sprite(2.4,17.5, 'rectGrey');
-
-play();
 
 
 
